@@ -247,6 +247,10 @@ Rock.Encryption provides an implementation of `ICrypto` that uses the various sy
 
 _Note that it is an **exceedingly** bad idea to store symmetric keys in configuration plaintext as shown above. Rock.Core provides a mechanism for securing configuration data. That topic will be added here at a later date._
 
+_Default Credential:_ If you want to have a default credential used, meaning you do not need to provide a keyProvider to the Crypto class you can accomplish this 2 different ways.  
+1. Name the credential `default`
+2. Leave the name of the credential blank.
+
 **TODO: flesh out the documentation for this section**
 
 ### `CompositeCrypto` class
