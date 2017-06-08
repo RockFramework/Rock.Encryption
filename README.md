@@ -22,7 +22,7 @@ _An easy-to-use, easy-to-configure crypto API._
 - [Rock.Encryption.XSerializer](#rockencryptionxserializer)
   - [Background](#background)
   - [SerializingCrypto Usage](#serializingcrypto-usage)
-
+- [Common Errors](#common-errors)
 ------
 
 
@@ -292,3 +292,9 @@ public class Foo
 	public int Baz { get; set; }
 }
 ```
+## Common Errors
+
+* System.Collections.Generic.KeyNotFoundException
+  * `Unable to locate credential using keyIdentifier:` If you get this error while trying to use .Encrypt or .Decrypt it means one of two things.
+    1. You did not provide a keyIdentifier value as the 2nd argument for `.Encrypt` or `.Decrypt`
+    2. You are trying to use the default <credential /> configuration but you did not name it `default` or leave the name blank.
