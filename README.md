@@ -6,6 +6,8 @@ _An easy-to-use, easy-to-configure crypto API._
 
 ##### Table of Contents
 - [Nuget](#nuget)
+  - Install via [Nuget UI](#install-nuget-via-ui)
+  - Install via [Command Line](#install-nuget-via-command-limne)
 - [Simple Usage](#simple-usage)
 - [Concepts](#concepts)
   - [`ICrypto` interface](#icrypto-interface)
@@ -28,7 +30,16 @@ _An easy-to-use, easy-to-configure crypto API._
 
 ## Nuget
 
-Rock.Encryption is available via [nuget](http://www.nuget.org/packages/Rock.Encryption). From the package manager console:
+Rock.Encryption is available via [nuget](http://www.nuget.org/packages/Rock.Encryption), please reference this link for more information on the package.
+
+### Install Nuget via UI
+If you want to install this package via the NuGet UI, this ca be done as well.  Make sure to switch to the QuGet package source.
+
+If you are unsure how to use the UI to reference the package source checkout out these [docs](https://docs.microsoft.com/en-us/nuget/tools/package-manager-ui#package-sources).
+
+### Install Nuget via Command Line
+
+How to install from the package manager console:
 
 ```
 PM> Install-Package Rock.Encryption
