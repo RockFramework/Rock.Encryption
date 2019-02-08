@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RockLib.Configuration.ObjectFactory;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -21,7 +22,7 @@ namespace RockLib.Encryption.Symmetric
         /// The <see cref="System.Text.Encoding"/> to be used for string/binary conversions.
         /// </param>
         public SymmetricCrypto(IEnumerable<Credential> credentials, Encoding encoding = null)
-            : this(new InMemoryCredentialRepository(credentials ?? throw new ArgumentNullException(nameof(credentials))), encoding)
+            : this(new InMemoryCredentialRepository(credentials), encoding)
         {
         }
 
@@ -35,7 +36,9 @@ namespace RockLib.Encryption.Symmetric
         /// <param name="encoding">
         /// The <see cref="System.Text.Encoding"/> to be used for string/binary conversions.
         /// </param>
-        public SymmetricCrypto(ICredentialRepository credentialRepository, Encoding encoding = null)
+        public SymmetricCrypto(
+            [DefaultType(typeof(InMemoryCredentialRepository))] ICredentialRepository credentialRepository,
+            Encoding encoding = null)
         {
             CredentialRepository = credentialRepository ?? throw new ArgumentNullException(nameof(credentialRepository));
             Encoding = encoding ?? Encoding.UTF8;
